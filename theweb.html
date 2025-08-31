@@ -3,42 +3,119 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Redirecting...</title>
-    <meta http-equiv="refresh" content="3;url=https://sites.google.com/pgcps.org/the-web-new/home?authuser=1&read_current=1">
+    <title>loading...</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
-            background-color: #000000; /* Dark background */
-            color: #FFFFFF; /* White text */
-            font-family: 'Roboto', sans-serif; /* Roboto font */
+            background-color: #111;
+            color: #ecf0f1;
+            font-family: 'Lexend', sans-serif;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             height: 100vh;
             margin: 0;
+            overflow: hidden;
         }
-        #message {
+
+        .loading-text {
+            margin-bottom: 25px;
+            font-size: 1.2rem;
+            letter-spacing: 3px;
+            opacity: 0; /* Initial state for animation */
+            transform: translateY(-20px); /* Initial state for animation */
+            font-weight: 700;
+            animation: slideDown 0.7s ease-out forwards;
+        }
+
+        .changelog {
+            width: 80%;
+            max-width: 500px;
             text-align: center;
+            margin-bottom: 40px;
+            padding: 20px;
+            border-radius: 10px;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            opacity: 0;
+            animation: fadeIn 1s ease-in forwards;
+            animation-delay: 1.5s; /* Delay to appear after main animation */
+        }
+        
+        .changelog-title {
+            font-weight: 700;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .loading-container {
+            width: 80%;
+            max-width: 400px;
+            height: 12px;
+            background-color: #333;
+            border-radius: 6px;
+            overflow: hidden;
+            opacity: 0; /* Initial state for animation */
+            transform: translateY(-20px); /* Initial state for animation */
+            animation: slideDown 0.7s ease-out 0.2s forwards; /* 0.2s delay for a layered effect */
+        }
+
+        .loading-bar {
+            height: 100%;
+            width: 0;
+            background: linear-gradient(90deg, #ff9b54 0%, #ffc07c 100%);
+            border-radius: 6px;
+            animation: fillBar 10s forwards;
+            animation-delay: 0.9s; /* Starts after the slideDown animation is mostly done */
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fillBar {
+            0% { width: 0; }
+            100% { width: 100%; }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
     </style>
-    <script>
-        function getRandomMessage() {
-            const messages = [
-                "throwing you into a virtual heaven..",
-                "hang tight, redirecting in a moment...",
-                "have you ever heard of fnf? anyways redirecting you..",
-                "taking a road trip..",
-                "3, 2, 1, blast off!!!",
-                "are you patient enough for this?",
-                "do NOT CHEAT ON TESTS!!",
-                "jeopardy waiting music goes here",
-                "it is a 1/10 chance to get this message. congrats",
-                "ughh.. waiting i hate it!!"
-            ];
-            return messages[Math.floor(Math.random() * messages.length)];
-        }
-    </script>
 </head>
-<body onload="document.getElementById('message').innerText = getRandomMessage();">
-    <p id="message"></p>
+<body>
+    <div class="loading-text">redirecting you to google sites</div>
+
+    <!-- Edit the changelog content here -->
+    <div class="changelog">
+        <div class="changelog-title">Changelog</div>
+        <p>
+            
+           08-31-2025 // more of a modern design instead of a white page <br>
+            
+        </p>
+    </div>
+    
+    <div class="loading-container">
+        <div class="loading-bar"></div>
+    </div>
+
+    <script>
+        setTimeout(function() {
+            window.location.href = "https://sites.google.com/view/qerw0-7tgerqw-erv9gqb-qwerp97g/home";
+        }, 10000); // 10 seconds
+    </script>
 </body>
 </html>
